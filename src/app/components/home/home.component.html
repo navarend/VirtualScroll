@@ -1,0 +1,23 @@
+<h1>Virtual Scroll</h1>
+<hr>
+<div class="row">
+  <div class="col">
+    <button type="button" class="btn btn-primary" (click)="GoToFinal()">Go to final</button>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-success text-center" (click)="GoToCenter()">Go to center</button>
+  </div>
+  <div class="col">
+    <button type="button" class="btn btn-danger text-right" (click)="GoToTop()">Go to top</button>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-10">
+    <cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
+      <div class="list-group-item" *cdkVirtualFor="let item of items; let id = index; let number = count">
+        Item {{ id }}  / {{ number }}
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
